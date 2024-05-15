@@ -1,0 +1,93 @@
+.nav-bar {
+  background-color: #333; /* Cambiar a un gris más minimalista */
+  padding: 10px 0;
+}
+
+.nav-bar .container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar .nav-link {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease; /* Agregar transición para suavizar el cambio de tamaño */
+}
+
+.nav-bar .nav-link:hover {
+  text-decoration: none;
+  transform: scale(1.05); /* Aumentar el tamaño en el hover */
+}
+
+.nav-bar .nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  transition: transform 0.3s ease; /* Agregar transición para suavizar el cambio de tamaño */
+}
+
+.nav-bar .nav-link:hover .nav-icon {
+  transform: scale(1.2); /* Aumentar el tamaño del ícono en el hover */
+}
+
+.nav-bar .badge {
+  background-color: #ff0000; /* Color azul para el indicador */
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.nav-bar a {
+  color: #000000;
+  margin: 0 15px;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  background-color: #333;
+  text-decoration: none;
+}
+
+.nav-bar .nav-link {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Agregamos transición para suavizar el cambio de color */
+}
+
+.nav-bar .nav-link:hover {
+  background-color: #555; /* Cambiamos el color de fondo al hacer hover */
+  transform: scale(1.05); /* Aumentamos ligeramente el tamaño en el hover */
+}
+
+.nav-bar .nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  transition: transform 0.3s ease; /* Agregamos transición para suavizar el cambio de tamaño */
+}
+
+.nav-bar .nav-link:hover .nav-icon {
+  transform: scale(1.2); /* Aumentamos el tamaño del ícono en el hover */
+}
+
+.nav-bar .badge {
+  background-color: #007bff; /* Color azul para el indicador */
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}

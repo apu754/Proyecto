@@ -1,0 +1,16 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-page h1 {
+  margin-bottom: 40px;
+  color: #ff0000;
+}
+
+.home-page h2 {
+  margin-bottom: 20px;
+  color: #ff0000;
+}

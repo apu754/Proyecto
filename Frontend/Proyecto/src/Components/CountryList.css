@@ -1,0 +1,21 @@
+.country-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.country-list li {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.country-list li:hover {
+  background: #f1f1f1;
+  transform: scale(1.02);
+}
