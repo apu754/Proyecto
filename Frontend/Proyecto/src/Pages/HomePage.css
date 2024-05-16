@@ -5,12 +5,29 @@
   text-align: center;
 }
 
-.home-page h1 {
+.home-welcome {
+  display: flex;
+  gap: 40px;
   margin-bottom: 40px;
-  color: #ff0000;
 }
 
-.home-page h2 {
-  margin-bottom: 20px;
-  color: #ff0000;
+.home-welcome-content {
+  flex: 1;
+  text-align: left;
+}
+
+.home-login {
+  width: 300px; /* Ajusta el ancho según sea necesario */
+}
+
+.home-investments {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.home-investments h2 {
+  margin-bottom: 10px;
 }

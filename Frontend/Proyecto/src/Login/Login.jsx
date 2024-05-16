@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'; // Importar PropTypes
+import PropTypes from 'prop-types';
 import React from 'react';
 import './Login.css';
 
@@ -19,7 +19,7 @@ const Login = ({ setLoggedIn }) => {
     const user = users.find((u) => u.email === email && u.password === password);
     if (user) {
       // Credenciales válidas, establecer el estado de inicio de sesión en verdadero
-      setLoggedIn(true);
+      setLoggedIn(true); // Llamando a la función setLoggedIn con el valor true
       // Redireccionar al usuario a la página de inicio
     } else {
       // Credenciales inválidas, mostrar un mensaje de error
@@ -62,9 +62,8 @@ const Login = ({ setLoggedIn }) => {
   );
 };
 
-// Validación de PropTypes
 Login.propTypes = {
-  setLoggedIn: PropTypes.func.isRequired, // Validar que setLoggedIn sea una función requerida
+  setLoggedIn: PropTypes.func.isRequired,
 };
 
 export default Login;

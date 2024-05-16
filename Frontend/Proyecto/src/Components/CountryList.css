@@ -1,12 +1,14 @@
 .country-list {
   list-style: none;
   padding: 0;
-  display: grid;
+  display: flex; /* Cambiado a flex */
   gap: 10px;
   width: 100%;
+  overflow-x: auto; /* Agregado para permitir desplazamiento horizontal si los elementos no caben en el contenedor */
 }
 
-.country-list li {
+.country-item {
+  flex: 0 0 auto; /* Agregado para que los elementos no se expandan */
   background: #fff;
   padding: 15px;
   border-radius: 5px;
@@ -15,7 +17,13 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.country-list li:hover {
+.country-item:hover {
   background: #f1f1f1;
   transform: scale(1.02);
+}
+
+.country-chart img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
