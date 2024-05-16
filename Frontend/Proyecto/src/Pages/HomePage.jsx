@@ -1,11 +1,8 @@
-import React from 'react';
 import CountryList from '../Components/CountryList.jsx';
 import Login from '../Login/Login.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
-  const [, setLoggedIn] = React.useState(false);
-
   return (
     <div className='home-page container'>
       <div className='home-welcome'>
@@ -14,7 +11,7 @@ const HomePage = () => {
           <p>Descubre las últimas tendencias del mercado financiero y gestiona tus inversiones de manera eficaz.</p>
         </div>
         <div className='home-login'>
-          <Login setLoggedIn={setLoggedIn} />
+          <Login />
         </div>
       </div>
 
