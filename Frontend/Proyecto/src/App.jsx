@@ -3,7 +3,8 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import NavBar from './Components/NavBar.jsx';
 import ActionPage from './Pages/ActionPage.jsx';
 import HomePage from './Pages/HomePage.jsx';
-import UserPage from './Pages/UserPage.jsx';
+
+import LoginPage from './Login/Login.jsx';
 import './index.css';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <div className='container'>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/users' element={<UserPage />} />
+          <Route path='/login' element={<LoginPage />} />
           <Route path='/actions' element={<ActionPage />} />
         </Routes>
       </div>
