@@ -1,6 +1,6 @@
 import './UserList.css';
 
-const users = [{ id: 1, nombre: 'Juan Perez', email: 'juan.perez@example.com' }];
+const users = [{ id: 1, nombre: 'Juan Diego', email: 'juan.perez@example.com' }];
 
 const UserList = () => {
   return (
