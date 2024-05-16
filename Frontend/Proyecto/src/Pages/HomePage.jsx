@@ -1,5 +1,5 @@
 import CountryList from '../Components/CountryList.jsx';
-import Login from '../Components/Login.jsx';
+import Login from '../Login/Login.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
       <div className='home-welcome'>
         <div className='home-welcome-content'>
           <h1>Bienvenido a Acciones & Gestión S.A.S</h1>
-          <p>Descubre las últimas tendencias del mercado financiero y gestiona tus inversiones de manera eficaz.</p>
+          <p></p>
         </div>
         <div className='home-login'>
           <Login />
