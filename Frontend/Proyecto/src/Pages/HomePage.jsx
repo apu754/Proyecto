@@ -1,5 +1,5 @@
 import CountryList from '../Components/CountryList.jsx';
-import Login from '../Login/Login.jsx';
+import Login from '../Components/Login.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
