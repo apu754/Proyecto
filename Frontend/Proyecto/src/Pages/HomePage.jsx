@@ -4,7 +4,7 @@ import Login from '../Login/Login.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [, setLoggedIn] = React.useState(false);
 
   return (
     <div className='home-page container'>
