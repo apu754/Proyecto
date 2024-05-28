@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = ({ setLoggedIn }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [error, setError] = React.useState('');
+  const navigate = useNavigate();
 
   const users = [
     { email: 'user1@example.com', password: 'password1' },
@@ -15,14 +17,11 @@ const Login = ({ setLoggedIn }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Verificar las credenciales
     const user = users.find((u) => u.email === email && u.password === password);
     if (user) {
-      // Credenciales válidas, establecer el estado de inicio de sesión en verdadero
-      setLoggedIn(true); // Llamando a la función setLoggedIn con el valor true
-      // Redireccionar al usuario a la página de inicio
+      setLoggedIn(true);
+      navigate('/'); // Redirigir al usuario a la página principal
     } else {
-      // Credenciales inválidas, mostrar un mensaje de error
       setError('Correo electrónico o contraseña incorrectos');
     }
   };

@@ -65,3 +65,20 @@
 .btn-inicio {
   background-color: #4caf50; /* Color verde */
 }
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
