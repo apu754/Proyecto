@@ -1,0 +1,17 @@
+export const countries = {
+  Colombia: ['Medellín', 'Bogotá', 'Cali', 'Barranquilla', 'Cartagena'],
+  USA: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
+  Mexico: ['Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Tijuana'],
+  Canada: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'],
+  Brazil: ['São Paulo', 'Rio de Janeiro', 'Brasilia', 'Salvador', 'Fortaleza'],
+  Argentina: ['Buenos Aires', 'Córdoba', 'Rosario', 'Mendoza', 'La Plata'],
+  Chile: ['Santiago', 'Valparaíso', 'Concepción', 'La Serena', 'Antofagasta'],
+  Spain: ['Madrid', 'Barcelona', 'Valencia', 'Seville', 'Bilbao'],
+  France: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice'],
+  Germany: ['Berlin', 'Hamburg', 'Munich', 'Cologne', 'Frankfurt'],
+  Italy: ['Rome', 'Milan', 'Naples', 'Turin', 'Palermo'],
+  UK: ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow'],
+  Australia: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
+  Japan: ['Tokyo', 'Osaka', 'Nagoya', 'Sapporo', 'Fukuoka'],
+  China: ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Chengdu'],
+};
