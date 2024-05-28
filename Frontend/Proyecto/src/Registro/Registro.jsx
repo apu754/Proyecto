@@ -10,6 +10,7 @@ const Register = ({ setRegistered }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
+  const [idTelefono, setidTelefono] = React.useState('');
   const [country, setCountry] = React.useState('');
   const [city, setCity] = React.useState('');
   const [error, setError] = React.useState('');
@@ -100,6 +101,17 @@ const Register = ({ setRegistered }) => {
             id='confirmPassword'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='confirmPassword'>Telefono:</label>
+          <input
+            type='text'
+            id='idNumber'
+            value={idTelefono}
+            onChange={(e) => setidTelefono(e.target.value)}
             required
             className='form-control'
           />
