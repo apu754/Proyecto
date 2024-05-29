@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../URL.js';
 import './Registro.css';
 import { countries } from './countries.jsx'; // Importar la lista de países y ciudades
 
@@ -14,8 +16,10 @@ const Register = ({ setRegistered }) => {
   const [country, setCountry] = React.useState('');
   const [city, setCity] = React.useState('');
   const [error, setError] = React.useState('');
+  const [success, setSuccess] = React.useState('');
+  const goTo = useNavigate();
 
-  const handleRegister = (e) => {
+  async function handleRegister(e) {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -23,11 +27,43 @@ const Register = ({ setRegistered }) => {
       return;
     }
 
-    // Suponiendo que se hace alguna lógica de registro aquí, como una llamada a un backend
+    setError('');
 
-    // Registro exitoso
-    setRegistered(true);
-  };
+    try {
+      const response = await fetch(`${API_URL}/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          idNumber,
+          email,
+          password,
+          confirmPassword,
+          idTelefono,
+          country,
+          city,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log('Usuario creado:', result.message);
+        setSuccess('Usuario creado con éxito');
+        alert('Usuario creado con éxito');
+        goTo('/login');
+        setRegistered(true);
+      } else {
+        setError(result.error || 'No se pudo crear el usuario');
+      }
+    } catch (error) {
+      console.log('Error:', error);
+      setError('Ocurrió un error al registrar el usuario');
+    }
+  }
 
   const handleCountryChange = (e) => {
     setCountry(e.target.value);
@@ -38,6 +74,7 @@ const Register = ({ setRegistered }) => {
     <div className='register-container'>
       <h2>Registro</h2>
       {error && <div className='error-message'>{error}</div>}
+      {success && <div className='success-message'>{success}</div>}
       <form onSubmit={handleRegister} className='register-form'>
         <div className='form-group'>
           <label htmlFor='firstName'>Nombre:</label>
@@ -106,10 +143,10 @@ const Register = ({ setRegistered }) => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='confirmPassword'>Telefono:</label>
+          <label htmlFor='idTelefono'>Teléfono:</label>
           <input
             type='text'
-            id='idNumber'
+            id='idTelefono'
             value={idTelefono}
             onChange={(e) => setidTelefono(e.target.value)}
             required

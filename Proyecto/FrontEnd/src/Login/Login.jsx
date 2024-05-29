@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../URL'; // Asegúrate de que la URL de tu API esté definida aquí
 import './Login.css';
 
 const Login = ({ setLoggedIn }) => {
@@ -9,20 +10,30 @@ const Login = ({ setLoggedIn }) => {
   const [error, setError] = React.useState('');
   const navigate = useNavigate();
 
-  const users = [
-    { email: 'user1@example.com', password: 'password1' },
-    { email: 'user2@example.com', password: 'password2' },
-    { email: 'user3@example.com', password: 'password3' },
-  ];
-
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const user = users.find((u) => u.email === email && u.password === password);
-    if (user) {
-      setLoggedIn(true);
-      navigate('/'); // Redirigir al usuario a la página principal
-    } else {
-      setError('Correo electrónico o contraseña incorrectos');
+    setError('');
+
+    try {
+      const response = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setLoggedIn(true);
+        navigate('/'); // Redirigir al usuario a la página principal
+      } else {
+        setError(result.error || 'Correo electrónico o contraseña incorrectos');
+      }
+    } catch (error) {
+      setError('Ocurrió un error al iniciar sesión. Inténtelo de nuevo más tarde.');
+      console.error('Error:', error);
     }
   };
 
