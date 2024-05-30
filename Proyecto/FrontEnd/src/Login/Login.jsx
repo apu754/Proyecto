@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../URL'; // Asegúrate de que la URL de tu API esté definida aquí
+import { API_URL } from '../URL';
 import './Login.css';
 
 const Login = ({ setLoggedIn }) => {
@@ -9,6 +9,13 @@ const Login = ({ setLoggedIn }) => {
   const [password, setPassword] = React.useState('');
   const [error, setError] = React.useState('');
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      setLoggedIn(true);
+    }
+  }, [setLoggedIn]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,10 +33,17 @@ const Login = ({ setLoggedIn }) => {
       const result = await response.json();
 
       if (response.ok) {
-        setLoggedIn(true);
-        navigate('/'); // Redirigir al usuario a la página principal
+        if (result.data) {
+          setLoggedIn(true);
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('userId', result.data.user.id); // Almacenar el ID del usuario
+          localStorage.setItem('accessToken', result.data.accessToken); // Almacenar el token de acceso
+          navigate('/perfil'); // Redirigir al perfil
+        } else {
+          setError('La respuesta del servidor no es válida.');
+        }
       } else {
-        setError(result.error || 'Correo electrónico o contraseña incorrectos');
+        setError(result.data?.message || 'Correo electrónico o contraseña incorrectos');
       }
     } catch (error) {
       setError('Ocurrió un error al iniciar sesión. Inténtelo de nuevo más tarde.');

@@ -1,6 +1,8 @@
-exports.jsonResponse = function (statusCode, body) {
+function jsonResponse(status, data) {
   return {
-    statusCode,
-    body,
+    status,
+    data,
   };
-};
+}
+
+module.exports = { jsonResponse };

@@ -7,8 +7,10 @@ const NavBar = ({ isLoggedIn, setLoggedIn }) => {
 
   const handleLogout = () => {
     setLoggedIn(false);
-
-    navigate('/login'); // Redirigir al usuario a la página de inicio de sesión
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('accessToken');
+    navigate('/login');
   };
 
   return (
@@ -21,7 +23,7 @@ const NavBar = ({ isLoggedIn, setLoggedIn }) => {
               Inicio
             </Link>
             {isLoggedIn && (
-              <Link to='/inversiones' className='nav-link'>
+              <Link to='/Acciones' className='nav-link'>
                 Inversiones
               </Link>
             )}

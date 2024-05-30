@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../URL.js';
@@ -189,10 +188,6 @@ const Register = ({ setRegistered }) => {
       </form>
     </div>
   );
-};
-
-Register.propTypes = {
-  setRegistered: PropTypes.func.isRequired,
 };
 
 export default Register;

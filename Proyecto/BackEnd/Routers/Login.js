@@ -2,6 +2,8 @@ const express = require('express');
 const { jsonResponse } = require('../lib/jsonResponse');
 const router = express.Router();
 const User = require('../Schema/user.js');
+const { generateAccessToken, generateRefreshToken } = require('../Autentificacion/GenerarToken');
+const getUserInfo = require('../lib/getUserinfo.js');
 
 router.post('/', async (req, res) => {
   const { email, password } = req.body;
@@ -14,20 +16,26 @@ router.post('/', async (req, res) => {
     );
   }
 
-  const user = await User.findOne({ email });
+  try {
+    const user = await User.findOne({ email });
 
-  if (user) {
-    const correctpassword = await user.comparePassword(password);
-  } else {
-    return res.status(400).json(jsonResponse(400, { message: 'Usuario no registrado' }));
+    if (user) {
+      const correctPassword = await user.comparePassword(password, user.password);
+      if (correctPassword) {
+        const accessToken = generateAccessToken({ id: user._id });
+        const refreshToken = generateRefreshToken({ id: user._id });
+
+        return res.status(200).json(jsonResponse(200, { user: getUserInfo(user), accessToken, refreshToken }));
+      } else {
+        return res.status(400).json(jsonResponse(400, { message: 'Usuario o contraseña incorrecta' }));
+      }
+    } else {
+      return res.status(400).json(jsonResponse(400, { message: 'Usuario no registrado' }));
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    return res.status(500).json(jsonResponse(500, { error: 'Error en el servidor' }));
   }
-
-  // Autenticar usuario
-
-  const accessToken = 'access_token';
-  const refreshToken = 'refresh_token';
-
-  return res.status(201).json(jsonResponse(201, { message: 'Usuario registrado con éxito' }));
 });
 
 module.exports = router;
