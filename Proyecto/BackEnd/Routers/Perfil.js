@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../Schema/user.js');
 const bcrypt = require('bcrypt');
-const { verifyToken } = require('../Autentificacion/authMiddleware.js'); // Importa la función verifyToken
+const { verifyToken } = require('../Autentificacion/authMiddleware.js');
 
 // Ruta para obtener el perfil del usuario
 router.get('/', verifyToken, async (req, res) => {
