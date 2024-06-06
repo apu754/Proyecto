@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { verifyToken } = require('../Autentificacion/authMiddleware.js');
 const User = require('../Schema/user.js');
-const Action = require('../Schema/Action.js'); // Asegúrate de importar tu esquema de acciones
+const Action = require('../Schema/Action.js'); 
 
 // Ruta para obtener las acciones compradas por el usuario
 router.get('/', verifyToken, async (req, res) => {
