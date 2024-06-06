@@ -16,8 +16,8 @@ const UserSchema = new mongoose.Schema({
   city: { type: String, required: true },
   actions: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Action',
+      action: { type: mongoose.Schema.Types.ObjectId, ref: 'Action' },
+      broker: { type: mongoose.Schema.Types.ObjectId, ref: 'Broker' },
     },
   ],
   balance: { type: Number, default: 0 }, // Añadimos el campo balance con valor inicial 0

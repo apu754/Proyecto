@@ -19,7 +19,7 @@ const CountrySchema = new mongoose.Schema({
       ref: 'User',
     },
   ],
-  brokers: [String],
+
   currencies: [String],
 });
 

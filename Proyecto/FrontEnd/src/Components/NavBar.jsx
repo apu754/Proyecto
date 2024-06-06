@@ -23,9 +23,14 @@ const NavBar = ({ isLoggedIn, setLoggedIn }) => {
               Inicio
             </Link>
             {isLoggedIn && (
-              <Link to='/Acciones' className='nav-link'>
-                Inversiones
-              </Link>
+              <>
+                <Link to='/acciones' className='nav-link'>
+                  Inversiones
+                </Link>
+                <Link to='/acciones-compradas' className='nav-link'>
+                  Acciones Compradas
+                </Link>
+              </>
             )}
           </div>
           <div className='right-links'>

@@ -1,0 +1,77 @@
+.country-list {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Cambiado a flex */
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto; /* Agregado para permitir desplazamiento horizontal si los elementos no caben en el contenedor */
+}
+
+.country-item {
+  flex: 0 0 auto; /* Agregado para que los elementos no se expandan */
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.country-item:hover {
+  background: #f1f1f1;
+  transform: scale(1.02);
+}
+
+.country-chart img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.country-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.country-item {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.country-item h3 {
+  margin-top: 0;
+}
+
+.investment-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.investment-button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(63, 63, 63);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.investment-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.investment-button:focus {
+  outline: none;
+}

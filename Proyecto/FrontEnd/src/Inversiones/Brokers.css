@@ -1,0 +1,84 @@
+/* Estilos para la ventana modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajuste del sombreado */
+  max-width: 80%; /* Ancho máximo del contenido */
+  text-align: center; /* Centrar el texto */
+}
+
+h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0; /* Bordes similares a los de la lista de países */
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajuste del sombreado */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Transiciones */
+}
+
+li:hover {
+  background: #f1f1f1;
+  transform: scale(1.02);
+}
+
+input[type='radio'] {
+  margin-right: 5px;
+  transform: scale(1.5); /* Agrandar el radio */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* Bordes más redondeados */
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo similar a la lista de países */
+  color: rgb(63, 63, 63);
+  font-size: 16px; /* Aumento del tamaño de la fuente */
+  transition: background-color 0.3s ease, transform 0.2s; /* Transiciones */
+}
+
+button:disabled {
+  opacity: 0.5; /* Reduce la opacidad de los botones deshabilitados */
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo al pasar el ratón */
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último botón */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre los botones */
+}

@@ -17,7 +17,6 @@ import nflxImage from '../assets/nflx.png';
 import oroImage from '../assets/oro.jpg';
 import tslaImage from '../assets/tesla--600.png';
 import usoUsdImage from '../assets/usd.jpg';
-// Importa las demás imágenes necesarias
 
 const HomePage = ({ isLoggedIn, setLoggedIn }) => {
   const [actions, setActions] = useState([]);
@@ -47,7 +46,7 @@ const HomePage = ({ isLoggedIn, setLoggedIn }) => {
   // Objeto que mapea el nombre de la inversión con la ruta de la imagen
   const investmentImages = {
     oro: oroImage,
-    usoUsd: usoUsdImage,
+    usousd: usoUsdImage,
     aapl: aaplImage,
     googl: googlImage,
     amzn: amznImage,
@@ -56,7 +55,6 @@ const HomePage = ({ isLoggedIn, setLoggedIn }) => {
     tsla: tslaImage,
     nflx: nflxImage,
     spy: spyImage,
-    // Agrega los demás tipos de inversión y sus imágenes
   };
 
   return (
@@ -79,15 +77,15 @@ const HomePage = ({ isLoggedIn, setLoggedIn }) => {
           {actions.map((action) => (
             <li key={action._id} className='country-item'>
               <h3>{action.name}</h3>
-              <p>Valor en Dólares: {action.valueInDollars}</p>
-              {/* Verificar si action.country está definido antes de acceder a su propiedad name */}
-              <p>País: {action.country?.name}</p>
-              {/* Mostrar la imagen correspondiente a la inversión */}
-              <img
-                src={investmentImages[action.name.toLowerCase()]}
-                alt={action.name}
-                style={{ width: '150px', height: '150px' }}
-              />
+              <p>Valor en Dólares: ${action.valueInDollars}</p>
+              {}
+              {
+                <img
+                  src={investmentImages[action.name.toLowerCase()]}
+                  alt={action.name}
+                  style={{ width: '150px', height: '150px' }}
+                />
+              }
             </li>
           ))}
         </ul>

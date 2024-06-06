@@ -5,6 +5,7 @@ import Actions from './Inversiones/Actions.jsx';
 import LoginPage from './Login/Login.jsx';
 import HomePage from './Pages/HomePage.jsx';
 import Perfil from './Perfil/Perfil.jsx';
+import PurchasedActions from './Perfil/PurchasedActions.jsx';
 import ProteccionRouter from './ProteccionRouter/ProteccionRouter.jsx';
 import RegisterPage from './Registro/Registro.jsx';
 import './index.css';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<HomePage isLoggedIn={isLoggedIn} setLoggedIn={handleLogin} />} />
           <Route path='/login' element={<LoginPage setLoggedIn={handleLogin} />} />
           <Route path='/register' element={<RegisterPage />} />
+          <Route path='/acciones-compradas' element={<PurchasedActions />} />
           <Route element={<ProteccionRouter isLoggedIn={isLoggedIn} />}>
             <Route path='/acciones' element={<Actions />} />
             <Route path='/perfil' element={<Perfil />} />

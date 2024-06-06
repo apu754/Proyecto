@@ -15,6 +15,12 @@ const ActionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Country',
   },
+  brokers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Brokers',
+    },
+  ],
 });
 
 const Action = mongoose.model('Action', ActionSchema);
