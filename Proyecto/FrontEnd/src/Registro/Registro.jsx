@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../URL.js';
 import './Registro.css';
-import { countries } from './countries.jsx'; // Importar la lista de países y ciudades
+import { countries } from './countries.jsx'; 
 
 const Register = ({ setRegistered }) => {
   const [firstName, setFirstName] = React.useState('');
