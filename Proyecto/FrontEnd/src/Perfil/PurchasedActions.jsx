@@ -61,13 +61,12 @@ const PurchasedActions = () => {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json', // Asegúrate de incluir el tipo de contenido
+          'Content-Type': 'application/json', 
         },
-        body: JSON.stringify({ actionId }), // Envía el ID de la acción en el cuerpo de la solicitud
+        body: JSON.stringify({ actionId }), 
       });
 
       if (response.ok) {
-        // Si la venta es exitosa, actualiza la lista de acciones
         const updatedActions = purchasedActions.filter((action) => action._id !== actionId);
         setPurchasedActions(updatedActions);
         alert('La acción ha sido vendida exitosamente.');
