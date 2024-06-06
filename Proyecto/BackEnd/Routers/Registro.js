@@ -2,7 +2,7 @@ const express = require('express');
 const { jsonResponse } = require('../lib/jsonResponse');
 const router = express.Router();
 const User = require('../Schema/user.js');
-const Country = require('../Schema/Country.js'); // Importa el modelo de país
+const Country = require('../Schema/Country.js'); 
 
 router.post('/', async (req, res) => {
   const { firstName, lastName, idNumber, email, password, confirmPassword, idTelefono, country, city } = req.body;
