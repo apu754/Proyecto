@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from '../URL';
-import './Perfil.css'; // Importa el archivo CSS para los estilos
+import './Perfil.css'; 
 
 const Perfil = () => {
   const [user, setUser] = useState(null);
