@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { API_URL } from '../URL.js';
 import './Actions.css';
-import Modal from './Brokers.jsx'; // Asegúrate de importar el componente modal correctamente
+import Modal from './Brokers.jsx'; 
 
 import btcImage from '../assets/Bitcoin.svg.webp';
 import spyImage from '../assets/SPY.png';
