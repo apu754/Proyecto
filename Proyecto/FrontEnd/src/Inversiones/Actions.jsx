@@ -142,7 +142,7 @@ const Actions = () => {
 
   return (
     <div>
-      <h2>Acciones para {userCountry}</h2>
+      <h2>Acciones para {user && user.country}</h2>
       <ul className='country-list'>
         {actions.map((action) => (
           <li key={action._id} className='country-item'>
